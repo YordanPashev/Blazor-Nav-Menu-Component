@@ -20,6 +20,7 @@ Component Features
 
     
 Usage
+
 Component Integration
 
 To use the navigation menu component in your Blazor application, follow these steps:
