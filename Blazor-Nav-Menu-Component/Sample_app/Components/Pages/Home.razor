@@ -1,0 +1,67 @@
+﻿@page "/"
+
+<NavMenuLayout MenuButtonsData="homeNavBarButtons" />
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+@code{
+    private List<MenuButton> homeNavBarButtons =
+    [
+        new MenuButton("Item 1", new List<MenuItem>
+                                 {
+                                    new MenuItem { Text = "Item 1.1" },
+                                    new MenuItem
+                                    {
+                                        Text = "Item 1.2",
+                                        Children = new List<MenuItem>
+                                        {
+                                            new MenuItem { Text = "Item 1.2.1" },
+                                            new MenuItem { Text = "Item 1.2.2" },
+                                        }
+                                    },
+                                 }),
+        new MenuButton("Item 2", new List<MenuItem>
+                                 {
+                                    new MenuItem
+                                    {
+                                        Text = "Item 2.1",
+                                        Children = new List<MenuItem>
+                                        {
+                                            new MenuItem
+                                            {
+                                                Text = "Item 2.1.1",
+                                                Children = new List<MenuItem>
+                                                {
+                                                    new MenuItem { Text = "Item 2.1.1.1" },
+                                                    new MenuItem { Text = "Item 2.1.1.2" },
+                                                }
+                                            },
+                                            new MenuItem { Text = "Item 2.1.2" },
+                                        }
+                                    },
+                                    new MenuItem { Text = "Item 2.2" },
+                                    new MenuItem
+                                    {
+                                        Text = "Item 2.3",
+                                        Children = new List<MenuItem>
+                                        {
+                                            new MenuItem { Text = "Item 2.3.1" },
+                                            new MenuItem
+                                            {
+                                                Text = "Item 2.3.2",
+                                                Children = new List<MenuItem>
+                                                {
+                                                    new MenuItem { Text = "Item 2.3.1.1" },
+                                                    new MenuItem { Text = "Item 2.3.1.2" },
+                                                }
+                                            },
+                                        }
+                                    },
+                                 }),
+        new MenuButton("Item 3", new List<MenuItem>()),
+    ];
+}

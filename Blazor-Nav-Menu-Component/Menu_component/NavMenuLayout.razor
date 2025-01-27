@@ -1,0 +1,107 @@
+﻿<nav class="menu-nav-bar">
+
+    @if (MenuButtonsData != null)
+    {
+        @foreach (MenuButton button in MenuButtonsData)
+        {
+            <div class="dropdown">
+                <button class="dropdown-button">@button.ButtonText <span class="arrow-down">@button.ArrowDown</span></button>
+                <div class="dropdown-content">
+
+                    @foreach (MenuItem item in button.Items)
+                    {
+                        <MenuItemLayout Item="item" />
+                    }
+
+                </div>
+            </div>
+        }
+    }
+
+</nav>
+
+<style>
+
+    .menu-nav-bar {
+        display: block !important;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 2em !important;
+    }
+
+    .dropdown-button {
+        padding: 0.5em;
+        cursor: pointer;
+        border: none !important;
+        background-color: transparent !important;
+        font-size: 1.5em !important;
+    }
+
+    .dropdown:hover .dropdown-button {
+        background-color: lightgray !important;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        left: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-item {
+        position: relative !important;
+    }
+
+    .nested-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        left: 100% !important;
+        top: 0% !important;
+    }
+
+    .dropdown-item:hover > .nested-dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a,
+    .nested-dropdown-content a {
+        color: black;
+        padding: 1em;
+        text-decoration: none;
+        display: block;
+        cursor: pointer !important;
+    }
+
+    .dropdown-item:hover {
+        color: red !important;
+    }
+
+    .arrow-down,
+    .arrow-right {
+        font-size: 0.8em;
+    }
+
+    .arrow-right {
+        margin-left: 2em;
+    }
+
+</style>
+
+@code {
+    [Parameter]
+    public List<MenuButton> MenuButtonsData { get; set; } = [];
+}

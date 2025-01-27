@@ -1,0 +1,26 @@
+﻿<div class="dropdown-item">
+
+    @if (this.Item != null)
+    {
+        <a>@Item?.Text <span class="arrow-right">@Item?.ArrowRight</span></a>
+
+        @if (Item?.Children != null && Item.Children.Count > 0)
+        {
+            <div class="nested-dropdown-content">
+
+                @foreach (MenuItem child in Item.Children)
+                {
+                    @* Recursively display all children of the current item *@
+                    <MenuItemLayout Item="child" />
+                }
+
+            </div>
+        }
+    }
+
+</div>
+
+@code {
+    [Parameter]
+    public MenuItem? Item { get; set; }
+}

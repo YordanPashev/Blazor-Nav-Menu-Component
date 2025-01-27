@@ -1,0 +1,33 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<NavMenuLayout MenuButtonsData="counterNavBarButtons" />
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private List<MenuButton> counterNavBarButtons =
+    [
+        new MenuButton("Increment", new List<MenuItem>()),
+        new MenuButton("Decrement", new List<MenuItem>()),
+        new MenuButton("Other Options", new List<MenuItem>
+                                        {
+                                           new MenuItem { Text = "Multiply by 2" },
+                                           new MenuItem { Text = "Reset Counter" },
+                                           new MenuItem { Text = "Get Total Count" },
+                                        }),
+    ];
+
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
