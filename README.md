@@ -34,6 +34,7 @@ To use the navigation menu component in your Blazor application, follow these st
     ![alt text](Resources/Decription_image_example_2.png)
 
 Example of Limitless Nested Dropdown Items 
+
 The recursive nature of the component allows you to nest dropdown items indefinitely. Simply continue adding MenuItem objects within each item to achieve the desired structure.
 
    ![alt text](Resources/Decription_image_example_3.png)
