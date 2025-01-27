@@ -21,6 +21,7 @@ Component Features
     
 Usage
 Component Integration
+
 To use the navigation menu component in your Blazor application, follow these steps:
 
 1. Define Menu Data: Create a list of MenuButton objects representing your menu structure. Each MenuButton can contain a list of child MenuItem objects for nested dropdowns.
